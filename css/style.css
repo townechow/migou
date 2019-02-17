@@ -1,0 +1,594 @@
+/* 全局初始化开始*/
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 2500px; /*增加高度使滚动条出现*/
+    font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+} /*全局设置*/
+a {
+    text-decoration: none; 
+}/* 初始化a将链接下划线去除 全局*/
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 全局初始化结束 */
+
+/* topbar开始 */
+.topbar {
+    /*border: 1px solid black; */
+    background-color: #333; 
+    height: 40px;
+} /*整个topbar设置*/
+.container {
+    /* border: 1px solid black; */
+    margin: 0 auto; /*内容居中，上下为0，左右自动 */
+    width: 1226px;
+} /*topbar内容调整*/
+
+.container::before,.container::after {
+    content: "";
+    display: table;
+}
+.container::after {
+    clear: both;
+    
+}
+/* 通过伪元素恢复浮动带来的边框消除*/
+
+.topbar a {
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.topbar a:hover {
+    color: #fff;
+} 
+/*topbar a标签内的字体颜色和大小及鼠标触碰时的颜色,此处用的是全局字体*/
+
+.topbar-nav {
+    float:left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0px; /*消除竖杠空格*/
+} /*topbar-nav 区块调整*/
+.topbar-nav span {
+    font-size: 12px;
+    color: #424242;
+    font-family: sans-serif;
+    margin: 0.5em;
+} /* 重新调整竖杠*/
+
+.topbar-cart,.topbar-info {
+    float:right;  
+} /*-cart,-info区块右飘浮*/
+.topbar-cart a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+    font-size: 12px;
+    color: #b0b0b0;
+    z-index: 32;
+    background-color: #424242
+} /*-cart模块化及设置*/
+.topbar-cart i {
+    margin-right: 4px;
+    vertical-align: -2px;
+}
+.topbar-cart a:hover{
+    background-color: #fff;
+    color: #ff6700;
+}/*光标触碰cart时背景及字体颜色*/
+.topbar-cart span {
+    margin-left: -4px;
+    font-size: 12px; 
+} /*调整(0)的位置*/
+
+.topbar-info {
+    margin-right: 15px;
+} /*-info 位置微调*/
+.topbar-info a {
+    float: left;
+    padding: 0 5px;
+    line-height: 40px;
+    height: 40;
+}/*调整info中的字的格式*/
+
+.topbar-info span {
+    float: left;
+    font-size: 12px;
+    color: #424242;
+    font-family: sans-serif;
+    line-height: 40px;
+}/*调整info内的竖线*/
+
+.topbar-info .sep {
+    padding: 0 10px;
+}/*“消息通知”字体稍大*/
+
+/* topbar结束 */
+
+/* head开始 */
+
+.header {
+    position: relative;
+    height: 100px;
+    /* border-bottom: 1px solid black; */
+    
+} 
+
+/* 以下为log */
+.header .header-log {
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+    /* border: 1px solid black; */
+}
+.header .header-log a {
+    position: relative;
+    display: block;
+    width: 55px;
+    height: 55px;
+    overflow: hidden; 
+    background: #ff6700 url(../img/32.png) no-repeat 50% 50%; 
+}
+/* .header .header-log a:hover {
+    background: #ff6700 url(../img/zhuye38.png) no-repeat 50% 50%；
+} */
+.header .header-log .ir {
+    text-align: left;
+    text-indent: -999em;
+}
+
+/* 以下导航分类 */
+.header .header-nav {
+    float: left;
+    width: 850px;
+    height: 100px;
+    /* border: 1px solid black; */
+}
+.header .nav-list {
+    position: relative; 
+    z-index: 10;
+    float: left;
+    width: 820px;
+    height: 88px;
+    margin: 0;
+    padding: 12px 0 0 30px;
+    list-style-type: none;
+    font-size: 16px;
+}
+/* 以下为“全部分类” */
+.header .nav-category {
+    position: relative;
+    float: left;
+    width: 127px;
+    padding-right: 15px;
+}
+.nav-category .link-category {
+    display: block;
+    padding: 26px 0 38px;
+    text-align: right;
+    color: #333;
+}
+
+/*以下为部分分类*/
+.header .nav-item {
+    float: left;
+} 
+.nav-item .link {
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333;
+}
+.header .nav-item a:hover {
+    color: #ff6700;
+}
+
+/* 以下为搜索框 */
+.header .header-search {
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+    /* border: 1px solid black; */
+}
+.header .header-search .search-form {
+    position: relative;
+    width: 296px;
+    height: 50px;
+}
+.hide {
+    display: none !important;
+}
+.header .search-text {
+    position: absolute;
+    top: 0;
+    right: 51px;
+    z-index: 1;
+    width: 245px;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+    outline: 0;
+    transition: all .2s;
+}
+
+/* 以下为提交按钮 */
+.header .search-bnt {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+    outline: 0;
+    transition: all .2s;
+    }
+.header .search-bnt:hover{
+    background-color: #ff6700;
+    color: #fff
+}  
+
+ /* .iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+}  */
+
+ /*以下为热词 */
+.header .search-hot-words {
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
+}
+.header .search-hot-words a {
+    display: inline;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    transition: all .2s;
+
+}
+.header .search-hot-words a:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+
+/* 以下为keyword-list */
+.header .search-form .keyword-list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    z-index: 20;
+    width: 243px;
+    border: 1px solid #ff6700;
+    border-top: 0;
+    background: #fff;
+}
+.header .search-form .keyword-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.header .search-form .keyword-list li a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    font-size: 12px;
+    color: #424242;
+}
+
+/* head结束 */
+
+/* seckill 开始*/
+
+.seckill {
+    background: #f5f5f5
+} 
+.seckill-head {
+    background: #f5f5f5 url(../img/seckill-head.jpg) no-repeat 50% 0;
+    height: 170px;
+    margin-top: 19px;
+}
+.seckill-head h1 {
+    text-indent: -99999em;
+}
+/* >banner */
+.seckill .seckill-banner {
+    background-color: #414141;
+    margin-top: -68px;
+    height: 68px;
+    margin-bottom: 22px;
+    /* margin: -68px 0 22px; */
+}
+.seckill .bannerfixed {
+    position: fixed;
+    top: 60px;
+    width: inherit; /* 不设继承，banner变短了，设为100%右边又超长。*/
+    
+}
+/* .seckill .relative {
+    position: relative;
+    width: 1226px;
+    height: 68px;
+   
+} */
+.seckill .seckill-banner ul {
+    background-color: #414141;
+    margin: 0;
+    height: 68px;
+    width: 100%;
+    height: 68px;
+    /* overflow: hidden;  */
+    background: #414141;
+    margin:0; 
+    padding:0;
+} 
+.seckill .seckill-banner li {
+    display: block;
+    float: left;
+    color: #fff;
+    width: 20%;
+    height: 68px;
+    line-height: 68px;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+}
+
+ .seckill-banner li em {
+    display: inline-block;
+    margin-left: 25px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: middle;
+}
+.seckill-banner li span {
+    display: inline-block;
+    margin-left: 15px;
+    text-align: left;
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.seckill-banner li span em {
+    display: inline-block;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    margin-left: 0;
+
+}
+.seckill-banner .active {
+    background: #f1393a
+}
+
+
+
+
+/* goods */
+.seckill-goods .active{
+    display: block;
+}
+.seckill-goods ul {
+    display: none;
+    margin-right: -13px;
+    /* border: 1px solid black; */
+    
+}
+.clearfix {
+    clear: both;
+} /*似乎并未能把ul撑开，原因未晓  */
+.seckill-goods li {
+    width: 400px;
+    height: 190px;
+    float: left;
+    background-color: #fff;
+    /* border: 1px solid black; */
+    margin-right: 13px;
+    margin-bottom: 13px;
+    list-style: none;
+}
+
+.seckill-goods .bg {
+    float: left;
+    width: 190px;
+    height: 190px;
+    /* border: 1px solid black; */
+}
+.seckill .bg img {
+    height: 190px;
+}
+.seckill-goods .info {
+    width: 190px;
+    height: 190px;
+    /* border: 1px solid red; */
+    float: left;
+    padding-top: 30px;
+    padding-left: 18px;
+} 
+.seckill-goods .info .name {
+    font-size: 16px;
+    color: #333;
+    line-height: 16px;
+    display: block;
+    white-space: nowrap; /*不换行*/
+    overflow: hidden;
+    text-overflow: ellipsis; 
+
+}
+.seckill-goods .info .tips {
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 10px;
+    color: #b0b0b0
+}
+.seckill-goods .info .price {
+    font-size: 16px;
+    line-height: 1px;
+    margin-top: 30px;
+    color: #f1393a;
+    margin-bottom: 0;
+}
+.seckill-goods .info .price del {
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+}
+.seckill-goods .info .btn {
+    display: inline-block;
+    width: 118px;
+    height: 28px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 28px;
+    text-align: center;
+    background: #f1393a;
+    margin-top: 19px;
+}
+.seckill .seckill-notice{
+  
+    font-size: 12px;
+    color: #999;
+    margin-top: 100px;
+    /* margin-bottom: 35px;  显示异常-该区背景无法设置*/
+   
+}
+
+/* seckill结束 */
+
+
+/* sitefooter开始 */
+
+.site-footer .footer-service {
+    width: 1226px;
+    height: 25px;
+    padding: 27px 0 ;
+    border-bottom: 1px solid #e0e0e0;
+}
+.site-footer .list-service {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.site-footer .list-service li {
+    float: left;
+    width: 19.8%;
+    height: 25px;
+    border-left: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 25px; /*若忘了带单位内容则跑到标签外，可能是因为没有高度。*/
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+.site-footer .list-service li:first-child {
+    border-left: 0;
+}
+
+.site-footer .list-service a:hover {
+    color: #ff6700;
+}
+.site-footer .list-service a {
+    color: #616161;
+    /* -webkit-transition: color .2s;
+    transition: color .2s; */
+}
+
+
+
+.site-footer .footer-links {
+    padding: 40px 0;
+    width: 1226px;
+    height: 111px;
+    /* border-bottom: 1px solid #e0e0e0; */
+    
+}
+.site-footer .footer-links .col-links {
+    float: left;
+    width: 160px;
+    height: 112px;
+    margin: 0;
+}
+.site-footer .footer-links .col-links dt {
+    margin: -1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+
+}
+.site-footer .footer-links .col-links dd {
+    margin: 10px 0 0;
+    font-size: 12px;
+}
+.site-footer .footer-links .col-links a {
+    color: #424242;
+    
+}
+.site-footer .footer-links .col-links a:hover {
+    color: #ff6700;
+} /*该效果要写完整的标签层次才显示！！*/
+
+.site-footer .footer-links .col-contact {
+    float: right;
+    width: 251px;
+    height: 112px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+    color: #616161;
+}
+.site-footer .footer-links .col-contact .phone {
+    margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+
+.site-footer .footer-links .col-contact p {
+    margin: 0 0 16px;
+    font-size: 12px;
+}
+
+.site-footer .footer-links .col-contact .link-btn {
+    display: inline-block;
+    width: 118px;
+    height: 22px;
+    padding: 6px 0 0;
+    margin: 0;
+    border: 1px solid #ff6700;
+    font-size: 12px;
+    color: #ff6700;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all .4s; /*光标悬浮是过渡效果*/
+}
+.site-footer .footer-links .col-contact a:hover {
+    background-color: #ff6700;
+    color: #fff;
+
+}
+/* sitefooter结束 */
+
